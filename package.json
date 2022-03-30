@@ -10,8 +10,16 @@
     "prestart": "npm run ts:build",
     "start": "node dist/app.js",
     "seed:db": "node ./src/seed.ts",
-    "lint": "prettier --check .",
+    "lint": "eslint src",
+    "pretty:fix": "prettier --write",
+    "pretty:check": "prettier --check",
     "format": "prettier --write ."
+  },
+  "lint-staged": {
+      "src/*.{ts}": [
+          "yarn prettier:fix",
+          "yarn lint"
+      ]
   },
   "repository": {
     "type": "git",
@@ -25,7 +33,7 @@
   "homepage": "https://github.com/marpit19/Attack-on-Titan-API#readme",
   "husky": {
     "hooks": {
-        "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "devDependencies": {
@@ -37,6 +45,7 @@
     "eslint": "^8.3.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",
+    "lint-staged": "^12.3.7",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.1",
     "ts-node": "^10.4.0",
