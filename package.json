@@ -16,7 +16,7 @@
     "format": "prettier --write ."
   },
   "lint-staged": {
-      "src/*.{ts}": [
+      "src/*.ts": [
           "yarn prettier:fix",
           "yarn lint"
       ]
