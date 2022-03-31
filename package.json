@@ -10,15 +10,14 @@
     "prestart": "npm run ts:build",
     "start": "node dist/app.js",
     "seed:db": "node ./src/seed.ts",
-    "lint": "eslint src",
-    "pretty:fix": "prettier --write",
-    "pretty:check": "prettier --check",
+    "lint": "eslint",
+    "prettier:fix": "prettier --write",
+    "prettier:check": "prettier --check",
     "format": "prettier --write ."
   },
   "lint-staged": {
-      "src/*.ts": [
-          "yarn prettier:fix",
-          "yarn lint"
+      "./src/*.ts": [
+          "yarn prettier:fix"
       ]
   },
   "repository": {
