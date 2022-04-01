@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Attack on Titan API",
   "main": "index.js",
+  "engines" : { 
+    "npm" : ">=8.0.0",
+    "node" : ">=16.0.0"
+  },
   "scripts": {
     "dev": "nodemon src/app.ts",
     "ts:dev": "npx -w",
