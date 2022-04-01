@@ -9,7 +9,7 @@
     "ts:build": "rm -rf ./dist && tsc",
     "prestart": "npm run ts:build",
     "start": "node dist/app.js",
-    "seed:db": "node ./src/seed.ts",
+    "seed:db": "nodemon ./src/seed.ts",
     "lint": "eslint",
     "prettier:fix": "prettier --write",
     "prettier:check": "prettier --check",

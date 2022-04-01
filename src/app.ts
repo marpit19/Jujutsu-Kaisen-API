@@ -1,15 +1,39 @@
 import express, { Request, Response } from 'express';
-// import mysql from 'mysql'
+import mysql from 'mysql';
 
 const app = express();
 
+const connectionString = process.env.DATABASE_URL || '';
+const connection = mysql.createConnection(connectionString);
+connection.connect();
+
 app.get('/api/characters', (req: Request, res: Response) => {
-  res.send('Working');
+  const query = 'SELECT * FROM Characters';
+  connection.query(query, (err, data) => {
+    if (err) throw err;
+
+    const retVal = {
+      data: data,
+      message: data.length === 0 ? 'No records found' : null,
+    };
+
+    return res.send(retVal);
+  });
 });
 
 app.get('/api/characters/:id', (req: Request, res: Response) => {
   const id = req.params.id;
-  res.send('Working id: ' + id);
+  const query = `SELECT * FROM Characters WHERE ID =  "${id}" LIMIT 1`;
+  connection.query(query, (err, data) => {
+    if (err) throw err;
+
+    const retVal = {
+      data: data.length > 0 ? data[0] : null,
+      message: data.length === 0 ? 'No Data Found' : null,
+    };
+
+    return res.send(retVal);
+  });
 });
 
 const port = process.env.PORT || 3000;
