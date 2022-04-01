@@ -1,10 +1,18 @@
 import express, { Request, Response } from 'express';
 import mysql from 'mysql';
+const appRoot = require('app-root-path');
+require('dotenv').config();
 
 const app = express();
 
 const connectionString = process.env.DATABASE_URL || '';
-const connection = mysql.createConnection(connectionString);
+const connection = mysql.createConnection({
+  host: process.env.HOST,
+  user: process.env.user,
+  password: 'pscale_pw_Kz3w6XVpjmwKdwJ6bh9ukyutk0MlrrfjVEQgxvxmzkI',
+  database: process.env.db,
+  ssl: {},
+});
 connection.connect();
 
 app.get('/api/characters', (req: Request, res: Response) => {

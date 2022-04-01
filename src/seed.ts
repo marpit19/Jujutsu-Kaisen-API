@@ -3,7 +3,13 @@ import cheerio from 'cheerio';
 import mysql from 'mysql';
 
 const connectionString = process.env.DATABASE_URL || '';
-const connection = mysql.createConnection(connectionString);
+const connection = mysql.createConnection({
+  host: process.env.HOST,
+  user: process.env.user,
+  password: 'pscale_pw_Kz3w6XVpjmwKdwJ6bh9ukyutk0MlrrfjVEQgxvxmzkI',
+  database: process.env.db,
+  ssl: {},
+});
 connection.connect();
 
 const getCharacterPageNames = async () => {
