@@ -1,8 +1,10 @@
 <h1 align="center">Welcome to Jujutsu Kaisen Api</h1>
 
-<h2>
+<h2 align="center">
 <img align='left' src="images/pic.jpg" alt="chad">
 </h2>
+
+<p>&nbsp;</p>
 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
