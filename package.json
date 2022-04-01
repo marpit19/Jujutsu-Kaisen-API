@@ -4,8 +4,8 @@
   "description": "Attack on Titan API",
   "main": "index.js",
   "engines" : { 
-    "npm" : ">=8.0.0",
-    "node" : ">=14.0.0"
+    "npm" : "8.4.1",
+    "node" : "16.14.0"
   },
   "scripts": {
     "dev": "nodemon src/app.ts",
