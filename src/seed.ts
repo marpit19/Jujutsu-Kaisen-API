@@ -5,8 +5,8 @@ import mysql from 'mysql';
 const connectionString = process.env.DATABASE_URL || '';
 const connection = mysql.createConnection({
   host: process.env.HOST,
-  user: 'y978vzoi3rp1',
-  password: 'pscale_pw_Kz3w6XVpjmwKdwJ6bh9ukyutk0MlrrfjVEQgxvxmzkI',
+  user: process.env.user,
+  password: process.env.pass,
   database: process.env.db,
   ssl: {},
 });
