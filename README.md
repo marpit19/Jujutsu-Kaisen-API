@@ -56,3 +56,5 @@ yarn install
 ## Show your support
 
 Give a ⭐️ if this project helped you!
+
+[![forthebadge made-with-typescript](http://ForTheBadge.com/images/badges/made-with-typescript.svg)](https://typescript.dev/)
