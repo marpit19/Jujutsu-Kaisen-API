@@ -8,12 +8,18 @@ const app = express();
 const connectionString = process.env.DATABASE_URL || '';
 const connection = mysql.createConnection({
   host: process.env.HOST,
-  user: process.env.user,
+  user: 'y978vzoi3rp1',
   password: 'pscale_pw_Kz3w6XVpjmwKdwJ6bh9ukyutk0MlrrfjVEQgxvxmzkI',
   database: process.env.db,
   ssl: {},
 });
 connection.connect();
+
+app.get('/api/characters/:id', (req: Request, res: Response) => {
+  const retVal = {
+    message: 'Go to /api/characters',
+  };
+});
 
 app.get('/api/characters', (req: Request, res: Response) => {
   const query = 'SELECT * FROM Characters';
